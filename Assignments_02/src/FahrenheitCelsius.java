@@ -5,7 +5,7 @@ public class FahrenheitCelsius {
         System.out.print("Enter temperature in Fahrenheit: ");
         double f = input.nextDouble();
         double c = (f - 32)/1.8;
-        System.out.println(f + " in Celsius is " + c);
+        System.out.printf("%.0f Fahrenheit in Celsius is %.1f", f, c);
         input.close();
     }
 }
