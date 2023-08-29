@@ -6,8 +6,7 @@ public class BinaryValues {
         String binaryInput = input.nextLine();
         int n = 0, binarySum = 0;
         for (int i = binaryInput.length()-1; i >= 0; i--) {
-            int value =  (binaryInput.charAt(i) == '0') ? 0 : 1;
-            // System.out.println(binary + " * 2^" + n + " = " + value * Math.pow(2,n));
+            int value = (binaryInput.charAt(i) == '0') ? 0 : 1;
             binarySum += value*(int)Math.pow(2,n++);
         }
         System.out.println(binaryInput + " = " + binarySum);
