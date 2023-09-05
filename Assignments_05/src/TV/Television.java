@@ -16,6 +16,10 @@ public class Television {
         }
     }
 
+    public void setChannel(int channel) {
+        currentChannel = channel;
+    }
+
     public void Watch() {
         System.out.printf("Watching channel %d\n", currentChannel);
     }
