@@ -1,28 +1,18 @@
 package com.metropolia.interfaces;
 
-public class Car implements IVehicle {
-    private String fuel, color;
+public class Car extends AbstractVehicle implements IVehicle {
+    private String color;
 
     public Car(String fuel, String color) {
-        this.fuel = fuel;
+        super("Car", fuel);
         this.color = color;
-    }
-
-    @Override
-    public void start() {
-        System.out.println("Car starting up...");
-    }
-
-    @Override
-    public void stop() {
-        System.out.println("Engine off...");
     }
 
     @Override
     public String getInfo() {
         System.out.println("Car Information:");
         return "Type: Car\n" +
-                "Fuel: " + fuel + "\n" +
+                "Fuel: " + getFuelType() + "\n" +
                 "Color: " + color + "\n";
     }
 }
