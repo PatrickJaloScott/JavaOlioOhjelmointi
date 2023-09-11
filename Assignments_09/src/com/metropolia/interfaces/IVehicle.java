@@ -1,7 +1,8 @@
 package com.metropolia.interfaces;
 
 public interface IVehicle {
-    public void start();
-    public void stop();
-    public abstract String getInfo();
+    void start();
+    void stop();
+    abstract String getInfo();
+    void calculateFuelEfficiency();
 }

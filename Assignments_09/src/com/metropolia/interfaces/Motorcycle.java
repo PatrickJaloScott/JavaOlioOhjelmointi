@@ -2,9 +2,12 @@ package com.metropolia.interfaces;
 
 public class Motorcycle extends AbstractVehicle implements IVehicle {
     private String color;
+    private double miles, fuelConsumption;
 
-    public Motorcycle(String fuel, String color) {
-        super("Motorcycle", fuel);
+    public Motorcycle(String fuel, String color, double milage, double fuelUse) {
+        super("Motorcycle", fuel, fuelUse, milage);
+        this.miles = milage;
+        this.fuelConsumption = fuelUse;
         this.color = color;
     }
 
@@ -15,5 +18,10 @@ public class Motorcycle extends AbstractVehicle implements IVehicle {
         return "Type: Motorcycle\n" +
                 "Fuel: " + getFuelType() + "\n" +
                 "Color: " + color + "\n";
+    }
+
+    @Override
+    public void calculateFuelEfficiency() {
+        System.out.println("Fuel efficiency: " + miles + "/" + fuelConsumption + " miles/gallon\n");
     }
 }
