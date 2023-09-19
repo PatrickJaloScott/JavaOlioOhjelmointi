@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Assignments_01/Assignments_01.iml" filepath="$PROJECT_DIR$/Assignments_01/Assignments_01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Assignments_02/Assignments_02.iml" filepath="$PROJECT_DIR$/Assignments_02/Assignments_02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Assignments_03/Assignments_03.iml" filepath="$PROJECT_DIR$/Assignments_03/Assignments_03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Assignments_04/Assignments_04.iml" filepath="$PROJECT_DIR$/Assignments_04/Assignments_04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Assignments_05/Assignments_05.iml" filepath="$PROJECT_DIR$/Assignments_05/Assignments_05.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Assignments_06/Assignments_06.iml" filepath="$PROJECT_DIR$/Assignments_06/Assignments_06.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Assignments_07/Assignments_07.iml" filepath="$PROJECT_DIR$/Assignments_07/Assignments_07.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Assignments_08/Assignments_08.iml" filepath="$PROJECT_DIR$/Assignments_08/Assignments_08.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Assignments_09/Assignments_09.iml" filepath="$PROJECT_DIR$/Assignments_09/Assignments_09.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Assignments_10/Assignments_10.iml" filepath="$PROJECT_DIR$/Assignments_10/Assignments_10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Assignments_11/Assignments_11.iml" filepath="$PROJECT_DIR$/Assignments_11/Assignments_11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Assignments_12/Assignments_12.iml" filepath="$PROJECT_DIR$/Assignments_12/Assignments_12.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/JavaOlioOhjelmointi.iml" filepath="$PROJECT_DIR$/.idea/JavaOlioOhjelmointi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Kokeilu/Kokeilu.iml" filepath="$PROJECT_DIR$/Kokeilu/Kokeilu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Simplified/Simplified.iml" filepath="$PROJECT_DIR$/Simplified/Simplified.iml" />
+    </modules>
+  </component>
+</project>
