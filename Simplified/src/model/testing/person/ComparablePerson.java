@@ -1,4 +1,4 @@
-package model.testing;
+package model.testing.person;
 
 public class ComparablePerson implements Comparable<ComparablePerson> {
     private String name;

@@ -1,20 +1,22 @@
 package program.demo;
 
-import model.testing.Animal;
-import model.testing.Cat;
-import model.testing.Dog;
-import model.testing.ComparablePerson;
+import model.testing.animals.IAnimal;
+import model.testing.animals.Cat;
+import model.testing.animals.Dog;
+import model.testing.person.ComparablePerson;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
 public class InterfaceExample {
     public static void main(String[] args) {
-        Animal dog = new Dog();
+        IAnimal dog = new Dog("Spot");
         dog.eat(); dog.sleep();
+        ((Dog)dog).bark();
 
-        Animal cat = new Cat();
+        IAnimal cat = new Cat("Whiskers");
         cat.eat(); cat.sleep();
+        ((Cat)cat).meow();
 
         List<ComparablePerson> people = new ArrayList<>();
         people.add(new ComparablePerson("Alice", 30));

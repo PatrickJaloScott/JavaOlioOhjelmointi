@@ -1,7 +1,7 @@
 package program.filesystem;
 
 import java.io.*;
-import model.testing.SerializablePerson;
+import model.testing.person.SerializablePerson;
 
 public class PersonMain {
     private final static String FILENAME = "person.dat";

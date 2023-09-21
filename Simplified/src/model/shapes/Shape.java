@@ -1,7 +1,15 @@
 package model.shapes;
 
-public class Shape {
-    public double calculateArea() {
-        return 0;
+public abstract class Shape {
+    protected String color;
+
+    public Shape(String color) {
+        this.color = color;
+    }
+
+    public abstract double calculateArea();
+
+    public void displayColor() {
+        System.out.println("Color: " + color);
     }
 }

@@ -3,7 +3,8 @@ package model.shapes;
 public class Circle extends Shape {
     private double radius;
 
-    public Circle(double radius) {
+    public Circle(String color, double radius) {
+        super(color);
         this.radius = radius;
     }
 

@@ -1,4 +1,4 @@
-package model.testing;
+package model.testing.person;
 
 import java.io.Serializable;
 

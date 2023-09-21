@@ -1,6 +1,6 @@
 package program.demo;
 
-import model.testing.Circle;
+import model.testing.shapes.Circle;
 
 public class AbstractExample {
     public static void main(String[] args) {

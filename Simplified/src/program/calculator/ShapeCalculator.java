@@ -6,8 +6,8 @@ import java.util.ArrayList;
 public class ShapeCalculator {
     public static void main(String[] args) {
         ArrayList<Shape> shapes = new ArrayList<>();
-        shapes.add(new Circle(5));
-        shapes.add(new Rectangle(4, 6));
+        shapes.add(new Circle("red", 5));
+        shapes.add(new Rectangle("yellow", 4, 6));
 
         Point A = new Point(2, 3),
                 B = new Point(7,9),
@@ -18,13 +18,14 @@ public class ShapeCalculator {
         Point X = new Point(0, 0),
                 Y = new Point(4.2132,3.5353),
                 Z = new Point(6.1, 0);
-        Triangle ABC = new Triangle(A, B, C),
-                OPQ = new Triangle(O, P, Q),
-                XYZ = new Triangle(X,Y,Z);
+        Triangle ABC = new Triangle("Red", A, B, C),
+                OPQ = new Triangle("Green", O, P, Q),
+                XYZ = new Triangle("Blue", X,Y,Z);
 
         shapes.add(ABC);
         shapes.add(OPQ);
         shapes.add(XYZ);
+        ABC.printTriangle();
 
         for (Shape shape : shapes) {
             System.out.println(shape);
