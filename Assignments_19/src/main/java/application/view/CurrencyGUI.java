@@ -1,6 +1,5 @@
-package view;
+package application.view;
 
-import controller.NoteController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,26 +8,20 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class NoteBookView extends Application {
-
-    NoteController controller;
-
+public class CurrencyGUI extends Application {
     @Override
     public void start(Stage window) {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/notebook_app_view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Currency Converter.fxml"));
         Parent root = null;
         try {
             root = fxmlLoader.load();
         } catch (IOException e) {
             System.err.println("Encountered error loading fxml. " + e.getCause());
         }
+        FXMLController controller = fxmlLoader.getController();
+        controller.initiate();
         Scene scene = new Scene(root);
         window.setScene(scene);
-        window.setTitle("Notebook");
         window.show();
-    }
-    @Override
-    public void init() throws Exception {
-        controller = new NoteController();
     }
 }
