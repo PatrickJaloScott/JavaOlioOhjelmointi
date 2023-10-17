@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ButtonType?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.CustomMenuItem?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.web.HTMLEditor?>
+
+
+<BorderPane prefHeight="200.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <bottom>
+      <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <buttons>
+          <Button mnemonicParsing="false" text="Button" />
+            <Button mnemonicParsing="false" text="Button" />
+        </buttons>
+      </ButtonBar>
+   </bottom>
+   <right>
+      <DialogPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="480.0" BorderPane.alignment="CENTER">
+          <header>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="320.0" />
+          </header>
+          <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="320.0" />
+          </content>
+          <expandableContent>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="320.0" />
+          </expandableContent>
+         <buttonTypes>
+            <ButtonType fx:constant="NEXT" />
+         </buttonTypes>
+      </DialogPane>
+   </right>
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Untitled Tab 1">
+            <content>
+                  <VBox>
+                     <children>
+                        <DatePicker />
+                        <HTMLEditor htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" prefHeight="200.0" prefWidth="506.0" />
+                     </children>
+                  </VBox>
+            </content>
+          </Tab>
+          <Tab text="Untitled Tab 2">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox AnchorPane.topAnchor="10.0">
+                           <children>
+                              <SplitMenuButton mnemonicParsing="false" text="SplitMenuButton">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" text="Action 1" />
+                                  <MenuItem mnemonicParsing="false" text="Action 2" />
+                                </items>
+                              </SplitMenuButton>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+   <left>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <ToolBar prefHeight="40.0" prefWidth="200.0">
+              <items>
+                  <Separator focusTraversable="false" halignment="RIGHT" orientation="VERTICAL" prefHeight="200.0" />
+                <Button mnemonicParsing="false" text="Button" />
+              </items>
+            </ToolBar>
+         </children>
+      </VBox>
+   </left>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                  <CustomMenuItem mnemonicParsing="false" text="Unspecified Action">
+                    <content>
+                      <CheckBox text="Click Me" />
+                    </content>
+                  </CustomMenuItem>
+                <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                  <CustomMenuItem mnemonicParsing="false" text="Unspecified Action">
+                    <content>
+                      <CheckBox text="Click Me" />
+                    </content>
+                  </CustomMenuItem>
+                  <RadioMenuItem mnemonicParsing="false" text="Unspecified Action" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </MenuBar>
+   </top>
+</BorderPane>
