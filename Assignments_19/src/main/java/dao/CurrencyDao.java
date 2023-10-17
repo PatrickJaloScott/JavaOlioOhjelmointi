@@ -2,14 +2,16 @@ package dao;
 
 import datasource.MariaDbConnection;
 import entity.CurrencyEntity;
+import jakarta.persistence.EntityManager;
 
 import java.sql.*;
 
 public class CurrencyDao {
+    private EntityManager em = MariaDbConnection.getEMInstance();
     private static Connection conn;
     public static String[] getCurrencyAbbreviations() {
         conn = MariaDbConnection.getConnection();
-        String sql = "SELECT abbreviation FROM currency";
+        String sql = "SELECT abbreviation FROM currency;";
 
         String[] abbreviations = new String[0];
         int count = 0;

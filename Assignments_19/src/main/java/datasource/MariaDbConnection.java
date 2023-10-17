@@ -1,5 +1,9 @@
 package datasource;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -7,6 +11,8 @@ import java.sql.SQLException;
 public class MariaDbConnection {
 
     private static Connection conn = null;
+    private static EntityManager em = null;
+    private static EntityManagerFactory emf = null;
 
     public static Connection getConnection() {
         if (conn == null) {
@@ -26,5 +32,15 @@ public class MariaDbConnection {
         } catch (SQLException e) {
             System.err.println("Connection termination failed.\n"+e.getMessage());
         }
+    }
+
+    public static EntityManager getEMInstance() {
+        if (em == null) {
+            if (emf == null) {
+                emf = Persistence.createEntityManagerFactory("CurrencyMariaDbUnit");
+            }
+            em = emf.createEntityManager();
+        }
+        return em;
     }
 }

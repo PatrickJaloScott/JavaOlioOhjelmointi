@@ -21,6 +21,7 @@ public class CurrencyGUI extends Application {
         FXMLController controller = fxmlLoader.getController();
         controller.initiate();
         Scene scene = new Scene(root);
+        window.setTitle("Currency Converter");
         window.setScene(scene);
         window.show();
     }
