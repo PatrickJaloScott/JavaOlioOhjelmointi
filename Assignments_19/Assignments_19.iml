@@ -10,7 +10,7 @@
           <factory-entry name="CurrencyMariaDbUnit" value="1b43ac77-a634-4d81-95c2-45f8ef9f79dd" />
         </datasource-mapping>
         <naming-strategy-map />
-        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/resources/META-INF/persistence/persistence.xml" />
+        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/resources/META-INF/persistence.xml" />
       </configuration>
     </facet>
   </component>

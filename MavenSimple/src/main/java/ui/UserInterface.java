@@ -6,8 +6,10 @@ import java.util.Scanner;
 public class UserInterface {
     private static final Scanner input = new Scanner(System.in);
     public static String promptStringInput(String message) {
+        String returnString = "";
         standardPrint(message);
-        return input.next();
+        returnString = input.next();
+        return returnString;
     }
 
     public static int promptIntegerInput(String message) {
