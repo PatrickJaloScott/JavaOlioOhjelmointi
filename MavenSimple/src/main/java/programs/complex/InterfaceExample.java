@@ -1,9 +1,9 @@
 package programs.complex;
 
-import model.testing.animals.IAnimal;
-import model.testing.animals.Cat;
-import model.testing.animals.Dog;
-import model.testing.person.ComparablePerson;
+import interfaces.animals.IAnimal;
+import model.animals.Cat;
+import model.animals.Dog;
+import model.person.ComparablePerson;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -23,12 +23,7 @@ public class InterfaceExample {
         people.add(new ComparablePerson("Bob", 25));
         people.add(new ComparablePerson("Charlie", 40));
 
-        Comparator<ComparablePerson> ageComparator = new Comparator<ComparablePerson>() {
-            @Override
-            public int compare(ComparablePerson p1, ComparablePerson p2) {
-                return Integer.compare(p1.getAge(), p2.getAge());
-            }
-        };
+        Comparator<ComparablePerson> ageComparator = (p1, p2) -> Integer.compare(p1.getAge(), p2.getAge());
 
         people.sort(ageComparator);
 

@@ -1,7 +1,7 @@
 package application.controller;
 
-import model.Dictionary;
-import view.DictionaryView;
+import model.library.Dictionary;
+import application.view.DictionaryView;
 
 public class DictionaryController {
 

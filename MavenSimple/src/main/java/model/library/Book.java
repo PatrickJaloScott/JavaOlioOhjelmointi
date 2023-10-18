@@ -7,7 +7,7 @@ public class Book {
     private int publicationYear;
     private int reservedMemberID = 0;
     private double rating;
-    private ArrayList<String> reviews = new ArrayList<>();
+    private final ArrayList<String> reviews = new ArrayList<>();
 
     public Book() {
     }

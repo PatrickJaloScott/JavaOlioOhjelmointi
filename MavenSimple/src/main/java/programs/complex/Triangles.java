@@ -1,6 +1,6 @@
 package programs.complex;
 
-import views.ui.UserInterface;
+import ui.UserInterface;
 public class Triangles {
     public static void main(String[] args) {
         System.out.println("Enter the sides of a triangle");

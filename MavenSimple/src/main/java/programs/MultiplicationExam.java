@@ -1,6 +1,6 @@
 package programs;
 
-import views.ui.UserInterface;
+import ui.UserInterface;
 import java.lang.Math;
 public class MultiplicationExam {
     public static void main(String[] args) {

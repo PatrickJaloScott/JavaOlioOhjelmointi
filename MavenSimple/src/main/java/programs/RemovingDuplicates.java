@@ -1,6 +1,6 @@
 package programs;
 
-import views.ui.UserInterface;
+import ui.UserInterface;
 public class RemovingDuplicates {
     public static void main(String[] args) {
         int arraySize = UserInterface.promptIntegerInput("Enter size for an array");

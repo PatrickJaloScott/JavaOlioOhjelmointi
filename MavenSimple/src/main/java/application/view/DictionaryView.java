@@ -1,6 +1,6 @@
 package application.view;
 
-import controller.DictionaryController;
+import application.controller.DictionaryController;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.VPos;
@@ -20,7 +20,7 @@ public class DictionaryView extends Application {
     private TextField wordSearchField;
     private TextArea definitionEntryField;
     private Label searchResultLabel;
-    Label entryErrorLabel = new Label();
+    final Label entryErrorLabel = new Label();
     private Color errorColor;
     private Color warningColor;
 

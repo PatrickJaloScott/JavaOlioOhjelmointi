@@ -1,6 +1,6 @@
 package programs.complex;
 
-import model.testing.shapes.Circle;
+import model.shapes.Circle;
 
 public class AbstractExample {
     public static void main(String[] args) {

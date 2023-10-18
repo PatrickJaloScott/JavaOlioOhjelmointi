@@ -1,4 +1,4 @@
-package model.testing.animals;
+package model.animals;
 
 public class Cat extends Animal {
     public Cat(String name) {

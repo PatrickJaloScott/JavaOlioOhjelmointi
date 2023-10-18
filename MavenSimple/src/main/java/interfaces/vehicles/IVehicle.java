@@ -3,6 +3,6 @@ package interfaces.vehicles;
 public interface IVehicle {
     void start();
     void stop();
-    abstract String getInfo();
+    String getInfo();
     void calculateFuelEfficiency();
 }

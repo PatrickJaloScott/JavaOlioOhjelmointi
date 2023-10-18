@@ -1,9 +1,9 @@
 package model.vehicles;
 
-import interfaces.IVehicle;
+import interfaces.vehicles.IVehicle;
 
 public class Motorcycle extends AbstractVehicle implements IVehicle {
-    private String color;
+    private final String color;
     private double miles, fuelConsumption;
 
     public Motorcycle(String fuel, String color, double milage, double fuelUse) {

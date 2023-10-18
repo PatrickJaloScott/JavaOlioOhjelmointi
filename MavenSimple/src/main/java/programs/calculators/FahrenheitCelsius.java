@@ -1,6 +1,6 @@
 package programs.calculators;
 
-import views.ui.UserInterface;
+import ui.UserInterface;
 public class FahrenheitCelsius {
     public static void main(String[] args) {
         double f = UserInterface.promptDoubleInput("Enter temperature in Fahrenheit");

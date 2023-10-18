@@ -3,8 +3,7 @@ package model;
 import java.util.HashMap;
 
 public class Currency {
-    private final String[] currencyAbbreviations = {"USD", "EUR", "GBP", "JPY", "CNY"},
-    currencyNames = {"United States Dollar", "Euro", "Great Britain Pound", "Japanese Yen", "Chinese Yen"};
+    private final String[] currencyAbbreviations = {"USD", "EUR", "GBP", "JPY", "CNY"};
     private final HashMap<String, Double> currencyMap;
     private final HashMap<String, String> currencyNameMap;
 
@@ -14,6 +13,7 @@ public class Currency {
         for (int i = 0; i < currencyAbbreviations.length; i++) {
             double[] currencyRates = {1.0, 0.95, 0.82, 149, 7.31};
             currencyMap.put(currencyAbbreviations[i], currencyRates[i]);
+            String[] currencyNames = {"United States Dollar", "Euro", "Great Britain Pound", "Japanese Yen", "Chinese Yen"};
             currencyNameMap.put(currencyAbbreviations[i], currencyNames[i]);
         }
     }

@@ -8,7 +8,8 @@ public class CoffeeMaker {
     }
     private CoffeeType coffeeType;
     private int coffeeAmount;
-    public static int COFFEEAMOUNTMIN = 10, COFFEEAMOUNTMAX = 80;
+    public static final int COFFEEAMOUNTMIN = 10;
+    public static final int COFFEEAMOUNTMAX = 80;
 
     public CoffeeMaker() {
         this.isOn = false;

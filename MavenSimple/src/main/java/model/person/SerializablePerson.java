@@ -1,11 +1,11 @@
-package model.testing.person;
+package model.person;
 
 import java.io.Serializable;
 
 public class SerializablePerson implements Serializable {
-    private String firstname;
-    private String lastname;
-    private int birthYear;
+    private final String firstname;
+    private final String lastname;
+    private final int birthYear;
 
     public SerializablePerson() {
         firstname = "";

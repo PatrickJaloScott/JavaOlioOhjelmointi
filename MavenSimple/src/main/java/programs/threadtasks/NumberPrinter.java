@@ -1,12 +1,12 @@
 package programs.threadtasks;
 
 public class NumberPrinter implements Runnable {
-    private int startNumber, endNumber;
+    private final int endNumber;
     private int counter;
-    private String numberType;
+    private final String numberType;
 
     NumberPrinter(int startAt, int endAt) {
-        counter = startNumber = startAt;
+        counter = startAt;
         endNumber = endAt;
         numberType = (startAt % 2 == 0) ? "Even" : "Odd";
     }

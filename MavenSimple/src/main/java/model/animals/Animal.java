@@ -1,7 +1,9 @@
-package model.testing.animals;
+package model.animals;
+
+import interfaces.animals.IAnimal;
 
 public abstract class Animal implements IAnimal {
-    protected String name;
+    protected final String name;
 
     public Animal(String name) {
         this.name = name;

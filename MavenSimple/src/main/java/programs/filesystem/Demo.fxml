@@ -87,7 +87,7 @@
          <children>
             <ToolBar prefHeight="40.0" prefWidth="200.0">
               <items>
-                  <Separator focusTraversable="false" halignment="RIGHT" orientation="VERTICAL" prefHeight="200.0" />
+                  <Separator halignment="RIGHT" orientation="VERTICAL" prefHeight="200.0" />
                 <Button mnemonicParsing="false" text="Button" />
               </items>
             </ToolBar>

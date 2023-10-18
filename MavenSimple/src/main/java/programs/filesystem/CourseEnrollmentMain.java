@@ -1,7 +1,7 @@
 package programs.filesystem;
 
 import java.io.*;
-import views.ui.UserInterface;
+import ui.UserInterface;
 import model.courseenrollment.*;
 
 public class CourseEnrollmentMain {

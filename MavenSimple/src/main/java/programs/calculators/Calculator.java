@@ -1,5 +1,7 @@
 package programs.calculators;
 
+import exceptions.NegativeNumberException;
+
 public class Calculator {
     private int sum = 0;
 

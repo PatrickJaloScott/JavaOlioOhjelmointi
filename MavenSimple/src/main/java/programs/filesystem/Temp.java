@@ -39,9 +39,9 @@ public class Temp {
         ObjectOutputStream objects;
         try (FileOutputStream outputStream = new FileOutputStream("C:\\Users\\patri\\Desktop\\TestOutput.op")) {
             try (ObjectOutputStream objectOutputStream = objects = new ObjectOutputStream(outputStream)) {
+                objects.writeObject(ruokalaji);
             }
         }
-        objects.writeObject(ruokalaji);
         objects.close();
     }
 }

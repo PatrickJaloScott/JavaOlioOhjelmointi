@@ -4,9 +4,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import model.Note;
-import model.NoteBook;
-import view.NoteBookView;
+import model.notebook.Note;
+import model.notebook.NoteBook;
+import application.view.NoteBookView;
 
 import java.util.ArrayList;
 
@@ -16,7 +16,7 @@ public class NoteController {
     private final ObservableList<String> noteListContent;
 
     @FXML
-    private ListView<String> noteList = new ListView<>();
+    private final ListView<String> noteList = new ListView<>();
 
     public NoteController() {
         ArrayList<String> notebookTitles = new ArrayList<>();

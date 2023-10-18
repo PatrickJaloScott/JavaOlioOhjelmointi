@@ -1,6 +1,6 @@
 package programs.calculators;
 
-import views.ui.UserInterface;
+import ui.UserInterface;
 public class SumOfThreeNumbers {
     public static void main(String[] args) {
         int first = UserInterface.promptIntegerInput("Give the first number: ");

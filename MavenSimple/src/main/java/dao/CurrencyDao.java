@@ -1,7 +1,6 @@
 package dao;
 
 import datasource.MariaDbConnection;
-import entity.CurrencyEntity;
 import jakarta.persistence.EntityManager;
 
 import java.sql.*;

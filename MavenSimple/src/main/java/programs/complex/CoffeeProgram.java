@@ -1,7 +1,7 @@
 package programs.complex;
 
 import model.coffee.CoffeeMaker;
-import views.ui.UserInterface;
+import ui.UserInterface;
 
 public class CoffeeProgram {
     public static void main(String[] args) {

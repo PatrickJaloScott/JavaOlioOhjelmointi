@@ -14,7 +14,7 @@ public class CSVFromNetwork {
         try {
             myURL = new URL(DATAURL);
         } catch (MalformedURLException e) {
-            System.err.println(e);
+            System.err.println(e.getMessage());
             // return;
         }
         String[] columnNames;
@@ -47,7 +47,7 @@ public class CSVFromNetwork {
             System.out.printf("\nAverage temperature was: %.2f C", (outdoorTemperatureSum/dataCount));
             reader.close();
         } catch (IOException e) {
-            System.err.println(e);
+            System.err.println(e.getMessage());
         } finally {
             try {
                 if(reader != null) {

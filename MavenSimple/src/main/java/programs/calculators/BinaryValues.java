@@ -1,6 +1,6 @@
 package programs.calculators;
 
-import views.ui.UserInterface;
+import ui.UserInterface;
 public class BinaryValues {
     public static void main(String[] args) {
         System.out.println("Enter a binary number with 1s and 0s (i.e. 1101)");

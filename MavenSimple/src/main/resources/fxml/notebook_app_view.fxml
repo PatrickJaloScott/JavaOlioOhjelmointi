@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../../MavenSimple/src/main/resources/styles/notebook_style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NoteController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="/styles/notebook_style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.NoteController">
    <left>
       <ListView fx:id="noteList" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
    </left>
@@ -17,7 +17,7 @@
          <children>
             <TextField fx:id="noteTitleField" promptText="Enter Title" />
             <TextArea fx:id="noteContentArea" prefHeight="377.0" prefWidth="191.0" promptText="Enter note" />
-            <Button fx:id="addNoteButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#addNote" stylesheets="@../../../../MavenSimple/src/main/resources/styles/notebook_style.css" text="Add Note" textAlignment="CENTER" />
+            <Button fx:id="addNoteButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#addNote" stylesheets="/styles/notebook_style.css" text="Add Note" textAlignment="CENTER" />
          </children>
       </VBox>
    </center>

@@ -4,7 +4,7 @@ public class Customer implements Runnable {
     private final int customerID;
     private static int lastCustomerID = 1;
 
-    private TicketCounter counter;
+    private final TicketCounter counter;
 
     private int tickets;
 

@@ -3,7 +3,7 @@ package model.notebook;
 import java.util.ArrayList;
 
 public class NoteBook {
-    private ArrayList<Note> notes;
+    private final ArrayList<Note> notes;
 
     public NoteBook() {
         this.notes = new ArrayList<>();

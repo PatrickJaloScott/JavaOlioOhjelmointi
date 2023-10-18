@@ -1,11 +1,13 @@
 package model.vehicles;
 
-import interfaces.IVehicle;
+import interfaces.vehicles.IVehicle;
 
 public class Bus extends Car implements IVehicle {
 
-    private int passengers = 0, passengerCapacity;
-    double maxGas, topSpeed;
+    private int passengers = 0;
+    private final int passengerCapacity;
+    final double maxGas;
+    final double topSpeed;
 
     public Bus(String fuelType, int passengerCapacity, double maxGas, double topSpeed) {
         super("Bus", fuelType, 0, 0);

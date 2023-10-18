@@ -1,7 +1,7 @@
 package model.tv;
 
 public class Television {
-    private int channelcount;
+    private final int channelcount;
     private int currentChannel;
 
     public Television(int channels) {

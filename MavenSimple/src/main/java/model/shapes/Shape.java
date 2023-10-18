@@ -9,6 +9,10 @@ public abstract class Shape {
 
     public abstract double calculateArea();
 
+    public void setColor(String color) {
+        this.color = color;
+    }
+
     public void displayColor() {
         System.out.println("Color: " + color);
     }

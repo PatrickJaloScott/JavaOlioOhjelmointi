@@ -2,6 +2,7 @@ package programs.demo;
 
 public class ContinuousCounter implements Runnable {
     private int counter;
+    boolean interrupted;
 
     ContinuousCounter() {
         counter = 1;
@@ -9,14 +10,18 @@ public class ContinuousCounter implements Runnable {
 
     @Override
     public void run() {
+        interrupted = false;
         try {
-            while (true) {
+            while (!interrupted) {
                 System.out.println(counter++);
                 Thread.sleep(1000);
             }
         } catch (InterruptedException e) {
             System.out.println("Thread interrupted");
-            return;
         }
+    }
+
+    public void interrupt() {
+        interrupted = true;
     }
 }

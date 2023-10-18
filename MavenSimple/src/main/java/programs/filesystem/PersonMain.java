@@ -1,7 +1,7 @@
 package programs.filesystem;
 
 import java.io.*;
-import model.testing.person.SerializablePerson;
+import model.person.SerializablePerson;
 
 public class PersonMain {
     private final static String FILENAME = "person.dat";
@@ -14,7 +14,7 @@ public class PersonMain {
             // we have objects state stored to the file, read it
             try (
                     FileInputStream inputstream = new FileInputStream(FILENAME);
-                    ObjectInputStream objects = new ObjectInputStream(inputstream);
+                    ObjectInputStream objects = new ObjectInputStream(inputstream)
             ) {
                 serializablePerson = (SerializablePerson) objects.readObject();
             } catch (Exception e) {
@@ -25,7 +25,7 @@ public class PersonMain {
             serializablePerson = new SerializablePerson("Enzio", "Benzio", 2002);
             try (
                     FileOutputStream outputstream = new FileOutputStream(FILENAME);
-                    ObjectOutputStream objects = new ObjectOutputStream(outputstream);
+                    ObjectOutputStream objects = new ObjectOutputStream(outputstream)
             ) {
                 objects.writeObject(serializablePerson);
             } catch (Exception e) {

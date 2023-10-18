@@ -1,6 +1,6 @@
 package programs.calculators;
 
-import views.ui.UserInterface;
+import ui.UserInterface;
 public class QuadraticSolver {
     public static void main(String[] args) {
         System.out.println("ax^2 + bx + c = 0");

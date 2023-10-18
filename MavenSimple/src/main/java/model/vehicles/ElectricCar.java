@@ -1,9 +1,10 @@
 package model.vehicles;
 
-import interfaces.IElectricVehicle;
+import interfaces.vehicles.IElectricVehicle;
 
 public class ElectricCar implements IElectricVehicle {
-    private double storedElectricity = 0, maxElectricCharge;
+    private double storedElectricity = 0;
+    private final double maxElectricCharge;
 
     public ElectricCar(double maxElectricCharge) {
         this.maxElectricCharge = maxElectricCharge;

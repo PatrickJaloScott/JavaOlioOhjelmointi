@@ -1,13 +1,13 @@
 package model.vehicles;
 
-import interfaces.IVehicle;
+import interfaces.vehicles.IVehicle;
 
 public class Car extends AbstractVehicle implements IVehicle {
     private float speed, maxSpeed;
     private float gasolineLevel, gasolineCapacity;
     private double fuelUse, miles;
     private String carModel;
-    private String color;
+    private final String color;
 
     public Car(String fuelType, String color, double fuelUse, double milage) {
         super("Car", fuelType, fuelUse, milage);

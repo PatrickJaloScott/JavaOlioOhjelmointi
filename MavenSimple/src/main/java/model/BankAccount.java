@@ -1,7 +1,7 @@
 package model;
 
 public class BankAccount {
-    private int accountNumber;
+    private final int accountNumber;
     private static int lastAccountNumber = 0;
     private double balance;
 

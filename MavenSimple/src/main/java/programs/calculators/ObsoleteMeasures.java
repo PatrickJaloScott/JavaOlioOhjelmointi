@@ -1,6 +1,6 @@
 package programs.calculators;
 
-import views.ui.UserInterface;
+import ui.UserInterface;
 public class ObsoleteMeasures {
     public static final int LEIVISKA = 20, NAULA = 32;
     public static final double LUOTI = 13.28;

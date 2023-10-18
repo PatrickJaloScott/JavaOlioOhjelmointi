@@ -1,7 +1,7 @@
 package model;
 
 public class VirtualPet {
-    private Vector2 position;
+    private final Vector2 position;
     private static final int GRID_SIZE = 20;
 
     public VirtualPet(double x, double y) {

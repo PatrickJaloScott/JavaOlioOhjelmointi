@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class UserInterface {
     private static final Scanner input = new Scanner(System.in);
     public static String promptStringInput(String message) {
-        String returnString = "";
+        String returnString;
         standardPrint(message);
         returnString = input.next();
         return returnString;

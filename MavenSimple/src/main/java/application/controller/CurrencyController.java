@@ -1,7 +1,7 @@
 package application.controller;
 
 import model.Currency;
-import view.CurrencyConverterGUI;
+import application.view.CurrencyConverterGUI;
 
 public class CurrencyController {
     private final CurrencyConverterGUI gui;

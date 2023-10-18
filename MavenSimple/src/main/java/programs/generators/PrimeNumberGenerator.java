@@ -1,6 +1,6 @@
 package programs.generators;
 
-import views.ui.UserInterface;
+import ui.UserInterface;
 public class PrimeNumberGenerator {
     public static void main(String[] args) {
         int start, end;

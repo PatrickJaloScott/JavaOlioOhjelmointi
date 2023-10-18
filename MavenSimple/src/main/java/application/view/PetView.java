@@ -1,6 +1,6 @@
 package application.view;
 
-import controller.PetController;
+import application.controller.PetController;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -43,12 +43,6 @@ public class PetView extends Application {
             double x = mouseMove.getX();
             double y = mouseMove.getY();
 
-            /*double petX = controller.getPetPosition().getX();
-            double petY = controller.getPetPosition().getY();
-
-            double imageX = petImgView.getX();
-            double imageY = petImgView.getY();*/
-            //System.out.printf("Mouse (%.2f, %.2f)\tPet (%.2f, %.2f)\tImage (%.2f, %.2f)\n", x, y, petX, petY, imageX, imageY);
             if(isMouseWithinBounds(x, y)) {
                 controller.handleMove(x, y);
             }

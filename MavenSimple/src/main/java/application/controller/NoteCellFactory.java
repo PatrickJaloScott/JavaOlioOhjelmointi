@@ -3,7 +3,7 @@ package application.controller;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.util.Callback;
-import model.Note;
+import model.notebook.Note;
 
 public class NoteCellFactory implements Callback<ListView<Note>, ListCell<Note>> {
     @Override

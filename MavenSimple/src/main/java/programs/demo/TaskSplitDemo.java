@@ -27,7 +27,7 @@ public class TaskSplitDemo {
                 mh.join();
             } catch (InterruptedException e) {
                 // thread was interrupted, the result may be incorrect
-                e.printStackTrace();
+                System.err.println("Caught an expected error: " + e);
             }
             result += mh.getFound();
         }

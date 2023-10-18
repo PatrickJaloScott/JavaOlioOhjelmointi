@@ -1,7 +1,7 @@
 package programs.complex;
 
 import model.tv.Television;
-import views.ui.UserInterface;
+import ui.UserInterface;
 import java.util.Random;
 
 public class TelevisionViewer {

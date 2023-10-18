@@ -2,12 +2,12 @@ package application.controller;
 
 import model.Vector2;
 import model.VirtualPet;
-import view.PetView;
+import application.view.PetView;
 
 public class PetController {
     private final VirtualPet pet;
-    PetMover petMover;
-    PetView view;
+    final PetMover petMover;
+    final PetView view;
 
     public PetController(PetView view) {
         this.pet = new VirtualPet(0, 0);
@@ -37,7 +37,5 @@ public class PetController {
         return VirtualPet.getGridSize();
     }
 
-    /*public void updateCanvas(Vector2 newPosition) {
-        view.updateCanvas(newPosition.getX(), newPosition.getY());
-    }*/
+    //public void updateCanvas(Vector2 newPosition) {view.updateCanvas(newPosition.getX(), newPosition.getY());}
 }

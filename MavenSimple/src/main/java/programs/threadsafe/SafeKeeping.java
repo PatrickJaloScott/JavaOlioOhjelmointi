@@ -8,7 +8,7 @@ public class SafeKeeping {
             "J", "K", "L", "M", "N", "O", "P", "Q", "R",
             "S", "T", "U", "V", "W", "X", "Y", "Z"
     };
-    private ArrayList<String> letterCombinations;
+    private final ArrayList<String> letterCombinations;
 
     public SafeKeeping() {
         letterCombinations = new ArrayList<>();

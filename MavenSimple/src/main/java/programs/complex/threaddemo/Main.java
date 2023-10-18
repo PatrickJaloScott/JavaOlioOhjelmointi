@@ -13,6 +13,7 @@ public class Main {
         try {
             william.join(); jeff.join();
         } catch (InterruptedException e) {
+            System.err.println(e.getMessage());
         }
 
         System.out.println("Saldo is: " + account.getSaldo());

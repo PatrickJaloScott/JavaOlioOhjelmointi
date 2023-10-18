@@ -32,7 +32,7 @@ public class Clipboard {
             System.err.println(fileNotFound.getLocalizedMessage());
         } catch (IOException e) {
             // Error output, will print to console even in case of output redirection
-            System.err.println(e);
+            System.err.println(e.getMessage());
         }
     }
 }

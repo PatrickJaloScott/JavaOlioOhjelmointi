@@ -3,8 +3,8 @@ package model.library;
 import java.util.ArrayList;
 
 public class User {
-    private String name;
-    private int age, memberID;
+    private final String name;
+    private final int age, memberID;
     private static int lastMemberID = 1;
     ArrayList<Book> borrowedBooks, reservedBooks;
 
@@ -17,11 +17,15 @@ public class User {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public int getMemberID() {
         return memberID;
+    }
+
+    public int getAge() {
+        return age;
     }
 
     public ArrayList<Book> getBorrowedBooks() {

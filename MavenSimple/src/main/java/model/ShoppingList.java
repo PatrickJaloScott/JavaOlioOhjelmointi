@@ -4,10 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ShoppingList {
-    private String listName;
-    private HashMap<String, Double> priceList = new HashMap<>();
-    private HashMap<String, String> categories = new HashMap<>();
-    private HashMap<String, Integer> quantities = new HashMap<>();
+    private final String listName;
+    private final HashMap<String, Double> priceList = new HashMap<>();
+    private final HashMap<String, String> categories = new HashMap<>();
+    private final HashMap<String, Integer> quantities = new HashMap<>();
 
     public ShoppingList(String name) {
         this.listName = name;

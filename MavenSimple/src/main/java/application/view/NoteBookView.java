@@ -1,6 +1,6 @@
 package application.view;
 
-import controller.NoteController;
+import application.controller.NoteController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -28,7 +28,7 @@ public class NoteBookView extends Application {
         window.show();
     }
     @Override
-    public void init() throws Exception {
+    public void init() {
         controller = new NoteController();
     }
 }

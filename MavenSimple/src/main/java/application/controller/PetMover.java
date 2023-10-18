@@ -3,18 +3,18 @@ package application.controller;
 import javafx.application.Platform;
 import model.Vector2;
 import model.VirtualPet;
-import view.PetView;
+import application.view.PetView;
 
 public class PetMover extends Thread {
 
     private final VirtualPet virtualPet;
     private final PetController petController;
-    private PetView petView;
+    private final PetView petView;
     private Vector2 petPosition;
     private Vector2 targetPosition;
     private final double baseStep = 1;
     private double step;
-    private double distanceLimit = 0.9;
+    private final double distanceLimit = 0.9;
 
     public PetMover(VirtualPet pet, PetController controller, PetView view) {
         this.virtualPet = pet;

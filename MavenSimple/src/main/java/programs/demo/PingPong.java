@@ -1,8 +1,8 @@
 package programs.demo;
 
 public class PingPong extends Thread {
-    private String word;
-    private int delay;
+    private final String word;
+    private final int delay;
 
     public PingPong(String whatToSay, int delayTime) {
         word = whatToSay;
@@ -18,7 +18,6 @@ public class PingPong extends Thread {
             }
         } catch (InterruptedException e) {
             System.out.println("Caught exception " + e);
-            return;
         }
     }
 

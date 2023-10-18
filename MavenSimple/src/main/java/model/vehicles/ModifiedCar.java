@@ -4,7 +4,8 @@ public class ModifiedCar extends Car {
     // Cruise control
     private boolean cruiseControlOn;
     private float targetSpeed;
-    private float minTargetSpeed, maxTargetSpeed;
+    private final float minTargetSpeed;
+    private final float maxTargetSpeed;
 
     public ModifiedCar(String model, int maxGas, int topSpeed, float minCruiseSpeed, float maxCruiseSpeed) {
         super(model, maxGas, topSpeed);

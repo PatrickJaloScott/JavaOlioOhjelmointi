@@ -1,4 +1,4 @@
-package model.testing.person;
+package model.person;
 
 import java.util.Comparator;
 

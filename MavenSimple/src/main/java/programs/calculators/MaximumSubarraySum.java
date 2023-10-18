@@ -1,6 +1,6 @@
 package programs.calculators;
 
-import views.ui.UserInterface;
+import ui.UserInterface;
 public class MaximumSubarraySum {
     public static void main(String[] args) {
         int arraySize = UserInterface.promptIntegerInput("How many numbers in the array?");
