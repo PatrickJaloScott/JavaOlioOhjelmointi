@@ -2,10 +2,8 @@ package application.view;
 
 import application.controller.CurrencyController2;
 import javafx.fxml.FXML;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.util.converter.NumberStringConverter;
 
 public class FXMLController {
     private final CurrencyController2 controller;
@@ -24,8 +22,11 @@ public class FXMLController {
 
     public void initiate() {
         String[] currencyAbbreviations = controller.getCurrencies();
+        inputTextField.setTextFormatter(new TextFormatter<>(new NumberStringConverter()));
         fromChoiceBox.getItems().addAll(currencyAbbreviations);
+        fromChoiceBox.setValue(fromChoiceBox.getItems().get(0));
         toComboBox.getItems().addAll(currencyAbbreviations);
+        toComboBox.setValue(toComboBox.getItems().get(1));
     }
 
     private double getInputCurrencyRate() {

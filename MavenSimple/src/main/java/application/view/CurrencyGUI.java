@@ -11,7 +11,7 @@ import java.io.IOException;
 public class CurrencyGUI extends Application {
     @Override
     public void start(Stage window) {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Currency Converter.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/full_program.fxml"));
         Parent root = null;
         try {
             root = fxmlLoader.load();
