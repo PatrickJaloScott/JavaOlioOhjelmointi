@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class CurrencyGUI extends Application {
+public class ProgramGUI extends Application {
     @Override
     public void start(Stage window) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/full_program.fxml"));
@@ -21,7 +21,7 @@ public class CurrencyGUI extends Application {
         FXMLController controller = fxmlLoader.getController();
         controller.initiate();
         Scene scene = new Scene(root);
-        window.setTitle("Currency Converter");
+        window.setTitle("Object Oriented Programming Assignments");
         window.setScene(scene);
         window.show();
     }

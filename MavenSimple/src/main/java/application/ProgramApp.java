@@ -1,10 +1,10 @@
 package application;
 
-import application.view.CurrencyGUI;
+import application.view.ProgramGUI;
 import javafx.application.Application;
 
-public class CurrencyApp {
+public class ProgramApp {
     public static void main(String[] args) {
-        Application.launch(CurrencyGUI.class);
+        Application.launch(ProgramGUI.class);
     }
 }

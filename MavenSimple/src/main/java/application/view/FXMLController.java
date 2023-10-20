@@ -1,12 +1,16 @@
 package application.view;
 
-import application.controller.CurrencyController2;
+import application.controller.CurrencyController;
+import application.controller.NoteController;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.util.converter.NumberStringConverter;
 
 public class FXMLController {
-    private final CurrencyController2 controller;
+    // Currency Converter GUI
+    private final CurrencyController currencyController;
     @FXML
     private ChoiceBox<String> fromChoiceBox;
     @FXML
@@ -16,29 +20,49 @@ public class FXMLController {
     @FXML
     private Label outputLabel;
 
+    // NoteBook GUI
+    @FXML
+    private ListView<String> noteListView;
+    private final NoteController noteController;
+    private ObservableList<String> noteTitles, noteListContent;
+    @FXML
+    private TextField noteTitleField;
+    @FXML
+    private TextArea noteContentArea;
+    @FXML
+    private Button addNoteButton;
+
     public FXMLController() {
-        controller = new CurrencyController2();
+        currencyController = new CurrencyController();
+        noteController = new NoteController();
     }
 
     public void initiate() {
-        String[] currencyAbbreviations = controller.getCurrencies();
+        // Currency Converter setup
+        String[] currencyAbbreviations = currencyController.getCurrencies();
         inputTextField.setTextFormatter(new TextFormatter<>(new NumberStringConverter()));
         fromChoiceBox.getItems().addAll(currencyAbbreviations);
         fromChoiceBox.setValue(fromChoiceBox.getItems().get(0));
         toComboBox.getItems().addAll(currencyAbbreviations);
         toComboBox.setValue(toComboBox.getItems().get(1));
+
+        // NoteBook setup
+        noteListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        noteTitles = FXCollections.observableArrayList(noteController.getNoteTitles());
+        noteListContent = FXCollections.observableArrayList();
+        noteListView.setItems(noteTitles);
     }
 
     private double getInputCurrencyRate() {
-        return controller.getCurrencyRate(fromChoiceBox.getValue());
+        return currencyController.getCurrencyRate(fromChoiceBox.getValue());
     }
 
     private double getOutputCurrencyRate() {
-        return controller.getCurrencyRate(toComboBox.getValue());
+        return currencyController.getCurrencyRate(toComboBox.getValue());
     }
 
     @FXML
-    private void updateInput() {
+    private void updateCCInput() {
         double inputValue, outputValue;
         try {
             inputValue = Double.parseDouble(inputTextField.getText());
@@ -47,5 +71,20 @@ public class FXMLController {
         }
         outputValue = inputValue * getOutputCurrencyRate() / getInputCurrencyRate();
         outputLabel.setText(String.format("%.2f", outputValue));
+    }
+
+    @FXML
+    private void addNote() {
+        String title = noteTitleField.getText();
+        String content = noteContentArea.getText();
+        if (!title.isEmpty()) {
+            noteController.addNote(title, content);
+            noteTitles.add(title);
+            noteListContent.add(content);
+        }
+        noteListView.setItems(noteTitles);
+        System.out.println(noteTitles.toString());
+        System.out.println(noteListContent.toString());
+        System.out.println(noteListView.getItems().toString());
     }
 }
