@@ -15,8 +15,12 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.FXMLController">
    <center>
@@ -28,52 +32,67 @@
                      <children>
                         <Label alignment="CENTER" text="Greetings fellow Coders!" textAlignment="CENTER" />
                         <Separator prefWidth="200.0" />
-                        <TextArea prefHeight="200.0" prefWidth="200.0" />
+                        <TextArea fx:id="mainTextArea" editable="false" prefHeight="200.0" prefWidth="200.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextArea>
                      </children>
                      <padding>
-                        <Insets left="64.0" right="64.0" />
+                        <Insets left="128.0" right="128.0" />
                      </padding>
                   </VBox>
               </content>
             </Tab>
-            <Tab closable="false" text="Currency Converter">
+            <Tab closable="false" text="Calculators">
                <content>
-                  <VBox alignment="CENTER">
-                     <children>
-                        <Label minHeight="60.0" minWidth="300.0" text="Select input and output currencies from the dropdown selectors and enter the input value into the field. You can navigate through the UI with the tab-key in the following progression: Input Currency -&gt; Output Currency -&gt; Input amount" textAlignment="CENTER" wrapText="true">
-                           <padding>
-                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
-                           </padding>
-                        </Label>
-                        <HBox alignment="CENTER">
-                           <children>
-                              <VBox alignment="CENTER" spacing="16.0">
+                  <TabPane>
+                     <tabs>
+                        <Tab closable="false" text="Currency Converter">
+                           <content>
+                              <VBox alignment="CENTER">
                                  <children>
-                                    <Label text="Choose input currency" />
-                                    <ChoiceBox fx:id="fromChoiceBox" prefWidth="150.0" />
-                                    <Label text="Choose output currency" />
-                                    <ComboBox fx:id="toComboBox" prefWidth="150.0" />
+                                    <Label minHeight="60.0" minWidth="300.0" text="Select input and output currencies from the dropdown selectors and enter the input value into the field. You can navigate through the UI with the tab-key in the following progression: Input Currency -&gt; Output Currency -&gt; Input amount" textAlignment="CENTER" wrapText="true">
+                                       <padding>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </padding>
+                                    </Label>
+                                    <HBox alignment="CENTER">
+                                       <children>
+                                          <VBox alignment="CENTER" spacing="16.0">
+                                             <children>
+                                                <Label text="Choose input currency" />
+                                                <ChoiceBox fx:id="fromChoiceBox" prefWidth="150.0" />
+                                                <Label text="Choose output currency" />
+                                                <ComboBox fx:id="toComboBox" prefWidth="150.0" />
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" spacing="16.0">
+                                             <children>
+                                                <Label prefHeight="25.6" />
+                                                <TextField fx:id="inputTextField" onKeyPressed="#updateCCInput" promptText="Enter input currency" />
+                                                <Label prefHeight="25.6" />
+                                                <Label fx:id="outputLabel" prefHeight="25.6" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
                                  </children>
                               </VBox>
-                              <VBox alignment="CENTER" spacing="16.0">
-                                 <children>
-                                    <Label prefHeight="25.6" />
-                                    <TextField fx:id="inputTextField" onKeyPressed="#updateCCInput" promptText="Enter input currency" />
-                                    <Label prefHeight="25.6" />
-                                    <Label fx:id="outputLabel" prefHeight="25.6" />
-                                 </children>
-                              </VBox>
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
                </content>
             </Tab>
             <Tab closable="false" text="Notes">
                <content>
-                  <HBox prefWidth="200.0">
+                  <HBox prefWidth="200.0" spacing="8.0">
                      <children>
-                        <ListView fx:id="noteListView" />
+                        <ListView fx:id="noteListView">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin></ListView>
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="16.0" HBox.hgrow="ALWAYS">
                            <children>
                               <TextField fx:id="noteTitleField" promptText="Enter Title" />
@@ -82,8 +101,42 @@
                            </children>
                         </VBox>
                      </children>
+                     <padding>
+                        <Insets bottom="4.0" top="4.0" />
+                     </padding>
                   </HBox>
                </content>
+            </Tab>
+            <Tab closable="false" text="Dictionary">
+              <content>
+                  <GridPane>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="249.199951171875" minHeight="10.0" prefHeight="174.99998779296874" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="169.20003356933591" minHeight="10.0" prefHeight="154.20001220703125" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <TextField fx:id="dictionaryNewWordField" promptText="New Word" />
+                        <TextArea fx:id="dictionaryNewWordDef" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                           </GridPane.margin>
+                        </TextArea>
+                        <Button fx:id="dictionarySaveButton" mnemonicParsing="false" onAction="#addDictionaryDefinition" text="Save" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+                        <TextField fx:id="dictionarySearchField" onAction="#getDictionaryDefinition" promptText="Search" GridPane.rowIndex="1" />
+                        <Label fx:id="dictionaryErrorLabel" text="Error" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <Label fx:id="dictionaryDefinitionLabel" lineSpacing="1.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                           <GridPane.margin>
+                              <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                           </GridPane.margin>
+                        </Label>
+                     </children>
+                  </GridPane>
+              </content>
             </Tab>
          </tabs>
       </TabPane>

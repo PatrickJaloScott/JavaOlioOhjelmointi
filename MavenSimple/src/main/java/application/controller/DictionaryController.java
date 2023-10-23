@@ -1,38 +1,20 @@
 package application.controller;
 
 import model.library.Dictionary;
-import application.view.DictionaryView;
 
 public class DictionaryController {
 
-    private final DictionaryView view;
-    private final Dictionary dictionary = new Dictionary();
+    private final Dictionary dictionary;
 
-    public DictionaryController(DictionaryView view) {
-        this.view = view;
-    }
-
-    public static void main(String[] args) {
-        DictionaryView.launch(DictionaryView.class);
+    public DictionaryController() {
+        dictionary = new Dictionary();
     }
 
     public void addEntry(String word, String definition) {
-        if (!word.isEmpty() && !definition.isEmpty()) {
-            dictionary.addWord(word, definition);
-            view.clearEntryFields();
-        } else {
-            view.setEntryError();
-        }
+        dictionary.addWord(word, definition);
     }
 
-    public void setDefinitionSearchGUI(String search) {
-        String definition = dictionary.getDefinition(search);
-        if (search.isEmpty()) {
-            view.setDefinitionWarning();
-        } else if(definition == null) {
-            view.setDefinitionError(search);
-        } else {
-            view.setDefinitionText(search, definition);
-        }
+    public String getDefinition(String search) {
+        return dictionary.getDefinition(search);
     }
 }

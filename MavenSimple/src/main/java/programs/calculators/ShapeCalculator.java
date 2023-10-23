@@ -1,5 +1,6 @@
 package programs.calculators;
 
+import model.Vector2;
 import model.shapes.*;
 import java.util.ArrayList;
 
@@ -9,15 +10,15 @@ public class ShapeCalculator {
         shapes.add(new Circle("red", 5));
         shapes.add(new Rectangle("yellow", 4, 6));
 
-        Point A = new Point(2, 3),
-                B = new Point(7,9),
-                C = new Point(10, 1);
-        Point O = new Point(5,3),
-                P = new Point(2, 7),
-                Q = new Point(1, 3);
-        Point X = new Point(0, 0),
-                Y = new Point(4.2132,3.5353),
-                Z = new Point(6.1, 0);
+        Vector2 A = new Vector2(2, 3),
+                B = new Vector2(7,9),
+                C = new Vector2(10, 1);
+        Vector2 O = new Vector2(5,3),
+                P = new Vector2(2, 7),
+                Q = new Vector2(1, 3);
+        Vector2 X = new Vector2(0, 0),
+                Y = new Vector2(4.2132,3.5353),
+                Z = new Vector2(6.1, 0);
         Triangle ABC = new Triangle("Red", A, B, C),
                 OPQ = new Triangle("Green", O, P, Q),
                 XYZ = new Triangle("Blue", X,Y,Z);

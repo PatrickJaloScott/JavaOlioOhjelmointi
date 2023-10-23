@@ -1,16 +1,18 @@
 package model.shapes;
 
+import model.Vector2;
+
 public class Triangle extends Shape {
-    private final Point p_A, p_B, p_C;
+    private final Vector2 p_A, p_B, p_C;
     private final double side_a, side_b, side_c;
     private double alpha, beta, gamma;
-    public Triangle(String color, Point a, Point b, Point c) {
+    public Triangle(String color, Vector2 a, Vector2 b, Vector2 c) {
         super(color);
         p_A = a; p_B = b; p_C = c;
 
-        side_a = p_B.distanceToPoint(p_C);
-        side_b = p_C.distanceToPoint(p_A);
-        side_c = p_A.distanceToPoint(p_B);
+        side_a = p_B.distanceTo(p_C);
+        side_b = p_C.distanceTo(p_A);
+        side_c = p_A.distanceTo(p_B);
     }
 
     @Override
@@ -28,27 +30,27 @@ public class Triangle extends Shape {
     }
 
     public void printTriangle() {
-        double startY = p_A.getY_coordinate();
-        double endY = p_A.getY_coordinate();
-        double startX = p_A.getX_coordinate();
-        double endX = p_A.getX_coordinate();
+        double startY = p_A.getY();
+        double endY = p_A.getY();
+        double startX = p_A.getX();
+        double endX = p_A.getX();
 
-        startY = Math.max(startY, p_B.getY_coordinate());
-        startY = Math.max(startY, p_C.getY_coordinate());
+        startY = Math.max(startY, p_B.getY());
+        startY = Math.max(startY, p_C.getY());
 
-        startX = Math.min(startX, p_B.getX_coordinate());
-        startX = Math.min(startX, p_C.getX_coordinate());
+        startX = Math.min(startX, p_B.getX());
+        startX = Math.min(startX, p_C.getX());
 
-        endY = Math.min(endY, p_B.getY_coordinate());
-        endY = Math.min(endY, p_C.getY_coordinate());
+        endY = Math.min(endY, p_B.getY());
+        endY = Math.min(endY, p_C.getY());
 
-        endX = Math.max(endX, p_B.getX_coordinate());
-        endX = Math.max(endX, p_C.getX_coordinate());
+        endX = Math.max(endX, p_B.getX());
+        endX = Math.max(endX, p_C.getX());
 
         for(double j = startY; j >= endY; j--) {
             for (double i = startX; i <= endX; i++) {
-                Point currenetPoint = new Point(i, j);
-                if(currenetPoint.distanceToPoint(p_A) == 0 || currenetPoint.distanceToPoint(p_B) == 0 || currenetPoint.distanceToPoint(p_C) == 0) {
+                Vector2 currenetPoint = new Vector2(i, j);
+                if(currenetPoint.distanceTo(p_A) == 0 || currenetPoint.distanceTo(p_B) == 0 || currenetPoint.distanceTo(p_C) == 0) {
                     System.out.print("*");
                 }
                 else {

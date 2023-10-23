@@ -9,8 +9,6 @@ public class NoteController {
     private final NoteBook noteBook = new NoteBook();
     private final ArrayList<String> noteTitles;
 
-    // TODO: implement file saving and loading
-
     public NoteController() {
         noteTitles = new ArrayList<>();
         for (Note n : noteBook.getNotes()) {
