@@ -14,6 +14,7 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -22,7 +23,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.FXMLController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.FXMLController">
    <center>
       <TabPane>
          <tabs>
@@ -44,10 +45,43 @@
                   </VBox>
               </content>
             </Tab>
+            <Tab closable="false" text="Bank">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
             <Tab closable="false" text="Calculators">
+              <content>
+                  <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                        <Tab closable="false" text="Basic">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                          </content>
+                        </Tab>
+                      <Tab closable="false" text="Obsolete Measures">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        </content>
+                      </Tab>
+                      <Tab closable="false" text="Quadratic">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+              </content>
+            </Tab>
+            <Tab closable="false" text="Converters">
                <content>
                   <TabPane>
                      <tabs>
+                        <Tab closable="false" text="Binary">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                          </content>
+                        </Tab>
                         <Tab closable="false" text="Currency Converter">
                            <content>
                               <VBox alignment="CENTER">
@@ -81,61 +115,188 @@
                               </VBox>
                            </content>
                         </Tab>
+                        <Tab closable="false" text="Temperature">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                          </content>
+                        </Tab>
                      </tabs>
                   </TabPane>
                </content>
             </Tab>
+            <Tab closable="false" text="Games">
+              <content>
+                  <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab closable="false" text="Pet">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        </content>
+                      </Tab>
+                      <Tab closable="false" text="Vehicles">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+              </content>
+            </Tab>
+            <Tab closable="false" text="Generators">
+              <content>
+                  <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab closable="false" text="Names">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        </content>
+                      </Tab>
+                      <Tab closable="false" text="Prime numbers">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+              </content>
+            </Tab>
+            <Tab closable="false" text="Library">
+              <content>
+                  <TabPane>
+                     <tabs>
+                        <Tab closable="false" text="Main">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                          </content>
+                        </Tab>
+                        <Tab closable="false" text="Dictionary">
+                           <content>
+                              <GridPane>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="249.199951171875" minHeight="10.0" prefHeight="174.99998779296874" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="169.20003356933591" minHeight="10.0" prefHeight="154.20001220703125" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <TextField fx:id="dictionaryNewWordField" promptText="New Word" />
+                                    <TextArea fx:id="dictionaryNewWordDef" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                       <GridPane.margin>
+                                          <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                       </GridPane.margin>
+                                    </TextArea>
+                                    <Button fx:id="dictionarySaveButton" mnemonicParsing="false" onAction="#addDictionaryDefinition" text="Save" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+                                    <TextField fx:id="dictionarySearchField" onAction="#getDictionaryDefinition" promptText="Search" GridPane.rowIndex="1" />
+                                    <Label fx:id="dictionaryErrorLabel" text="Error" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                                    <Label fx:id="dictionaryDefinitionLabel" lineSpacing="1.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                       <GridPane.margin>
+                                          <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+              </content>
+            </Tab>
+            <Tab closable="false" text="Lounge">
+              <content>
+                  <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab closable="false" text="Coffee">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        </content>
+                      </Tab>
+                      <Tab closable="false" text="Shapes">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        </content>
+                      </Tab>
+                        <Tab closable="false" text="Televeision">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                           </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+              </content>
+            </Tab>
             <Tab closable="false" text="Notes">
                <content>
-                  <HBox prefWidth="200.0" spacing="8.0">
-                     <children>
-                        <ListView fx:id="noteListView">
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin></ListView>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="16.0" HBox.hgrow="ALWAYS">
-                           <children>
-                              <TextField fx:id="noteTitleField" promptText="Enter Title" />
-                              <TextArea fx:id="noteContentArea" prefHeight="200.0" prefWidth="200.0" />
-                              <Button fx:id="addNoteButton" mnemonicParsing="false" onAction="#addNote" text="Save" />
-                           </children>
-                        </VBox>
-                     </children>
-                     <padding>
-                        <Insets bottom="4.0" top="4.0" />
-                     </padding>
-                  </HBox>
+                  <TabPane>
+                     <tabs>
+                        <Tab closable="false" text="Files">
+                           <content>
+                              <HBox prefWidth="200.0" spacing="8.0">
+                                 <children>
+                                    <ListView fx:id="noteListView">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </ListView>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="16.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <TextField fx:id="noteTitleField" promptText="Enter Title" />
+                                          <TextArea fx:id="noteContentArea" prefHeight="200.0" prefWidth="200.0" />
+                                          <Button fx:id="addNoteButton" mnemonicParsing="false" onAction="#addNote" text="Save" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="4.0" top="4.0" />
+                                 </padding>
+                              </HBox>
+                           </content>
+                        </Tab>
+                        <Tab closable="false" text="Shopping list">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                          </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
                </content>
             </Tab>
-            <Tab closable="false" text="Dictionary">
+            <Tab closable="false" text="School">
               <content>
-                  <GridPane>
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints maxHeight="249.199951171875" minHeight="10.0" prefHeight="174.99998779296874" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="169.20003356933591" minHeight="10.0" prefHeight="154.20001220703125" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                     <children>
-                        <TextField fx:id="dictionaryNewWordField" promptText="New Word" />
-                        <TextArea fx:id="dictionaryNewWordDef" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
-                           <GridPane.margin>
-                              <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
-                           </GridPane.margin>
-                        </TextArea>
-                        <Button fx:id="dictionarySaveButton" mnemonicParsing="false" onAction="#addDictionaryDefinition" text="Save" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
-                        <TextField fx:id="dictionarySearchField" onAction="#getDictionaryDefinition" promptText="Search" GridPane.rowIndex="1" />
-                        <Label fx:id="dictionaryErrorLabel" text="Error" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                        <Label fx:id="dictionaryDefinitionLabel" lineSpacing="1.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
-                           <GridPane.margin>
-                              <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
-                           </GridPane.margin>
-                        </Label>
-                     </children>
-                  </GridPane>
+                  <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab closable="false" text="Course enrollment">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        </content>
+                      </Tab>
+                      <Tab closable="false" text="Multiplication exercises">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+              </content>
+            </Tab>
+            <Tab closable="false" text="Tables">
+              <content>
+                  <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab closable="false" text="Max subarray sum">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        </content>
+                      </Tab>
+                      <Tab closable="false" text="Array duplicates">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
               </content>
             </Tab>
          </tabs>
