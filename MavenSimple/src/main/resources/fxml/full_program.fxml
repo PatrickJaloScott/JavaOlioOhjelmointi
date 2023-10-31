@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.ComboBox?>
@@ -19,6 +20,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -47,7 +49,26 @@
             </Tab>
             <Tab closable="false" text="Bank">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Make a transaction" />
+                        <TextField promptText="Recipient" GridPane.rowIndex="1" />
+                        <TextField promptText="Amout (x.x)" GridPane.rowIndex="2" />
+                        <Button mnemonicParsing="false" text="Send" GridPane.rowIndex="3" />
+                        <Label text="Current Balance: " GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="Account: " GridPane.columnIndex="1" />
+                     </children>
+                  </GridPane>
               </content>
             </Tab>
             <Tab closable="false" text="Calculators">
@@ -56,17 +77,75 @@
                     <tabs>
                         <Tab closable="false" text="Basic">
                           <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                              <HBox spacing="8.0">
+                                 <children>
+                                    <VBox spacing="8.0">
+                                       <children>
+                                          <TextField fx:id="basicCalcNum1" />
+                                          <TextField fx:id="basicCalcNum2" layoutX="10.0" layoutY="10.0" />
+                                          <TextField fx:id="basicCalcNum3" layoutX="10.0" layoutY="10.0" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" spacing="8.0">
+                                       <children>
+                                          <TextField fx:id="basicCalcSum" editable="false" text="Sum =" />
+                                          <TextField fx:id="basicCalcProduct" editable="false" layoutX="10.0" layoutY="10.0" text="Product =" />
+                                          <TextField fx:id="basicCalcAvg" editable="false" layoutX="10.0" layoutY="36.0" text="Average =" />
+                                          <Button fx:id="basicCalcSolveButton" mnemonicParsing="false" onAction="#basicCalcSolve" text="Solve" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                 </padding>
+                              </HBox>
                           </content>
                         </Tab>
                       <Tab closable="false" text="Obsolete Measures">
                         <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                              <VBox fillWidth="false" spacing="8.0">
+                                 <children>
+                                    <TextField fx:id="obsoleteLuotiField" promptText="Enter luodit" />
+                                    <TextField fx:id="obsoleteNaulaField" layoutX="10.0" layoutY="10.0" promptText="Enter naulat" />
+                                    <TextField fx:id="obsoleteLeiviskaField" layoutX="10.0" layoutY="36.0" promptText="Enter leiviskat" />
+                                    <Label fx:id="obsoleteGramsLabel" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                 </padding>
+                              </VBox>
                         </content>
                       </Tab>
                       <Tab closable="false" text="Quadratic">
                         <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                              <VBox maxWidth="-Infinity" prefWidth="150.0" spacing="4.0">
+                                 <children>
+                                    <Label text="ax^2 + bx + c = 0" />
+                                    <HBox alignment="CENTER_LEFT" spacing="4.0">
+                                       <children>
+                                          <Label text="a" HBox.hgrow="ALWAYS" />
+                                          <TextField fx:id="quadraticAField" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" spacing="4.0">
+                                       <children>
+                                          <Label text="b" HBox.hgrow="ALWAYS" />
+                                          <TextField fx:id="quadraticBField" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" spacing="4.0">
+                                       <children>
+                                          <Label text="c" HBox.hgrow="ALWAYS" />
+                                          <TextField fx:id="quadraticCField" />
+                                       </children>
+                                    </HBox>
+                                    <Label fx:id="quadraticFormulaLabel" />
+                                    <Button mnemonicParsing="false" onAction="#solveQuadraticFormula" text="Solve" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                 </padding>
+                              </VBox>
                         </content>
                       </Tab>
                     </tabs>
@@ -79,7 +158,15 @@
                      <tabs>
                         <Tab closable="false" text="Binary">
                           <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                              <VBox maxWidth="-Infinity" prefWidth="200.0" spacing="8.0">
+                                 <children>
+                                    <TextField fx:id="binaryInput" />
+                                    <Label fx:id="binaryOutput" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="4.0" top="4.0" />
+                                 </padding>
+                              </VBox>
                           </content>
                         </Tab>
                         <Tab closable="false" text="Currency Converter">
@@ -215,7 +302,11 @@
                       </Tab>
                       <Tab closable="false" text="Shapes">
                         <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                              <Pane>
+                                 <children>
+                                    <Canvas fx:id="shapeCanvas" height="300.0" width="780.0" />
+                                 </children>
+                              </Pane>
                         </content>
                       </Tab>
                         <Tab closable="false" text="Televeision">
@@ -274,7 +365,16 @@
                       </Tab>
                       <Tab closable="false" text="Multiplication exercises">
                         <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                              <VBox>
+                                 <children>
+                                    <HBox fx:id="mathExamQuestion">
+                                       <children>
+                                          <Label text="10 * 10 =" />
+                                          <TextField />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
                         </content>
                       </Tab>
                     </tabs>

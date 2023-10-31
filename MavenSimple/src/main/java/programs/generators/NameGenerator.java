@@ -6,7 +6,6 @@ public class NameGenerator {
         String[] firstNames = {"John", "James", "Matt", "Mike"},
                 lastNames = {"Smith", "Jackson", "Simmons", "Morris"};
 
-        System.out.print("How many names do you want to generate?: ");
         int nameCount = UserInterface.promptIntegerInput("How many names do you want to generate?");
 
         for (int i = 0; i < nameCount; i++) {

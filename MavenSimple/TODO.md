@@ -1,5 +1,9 @@
 # TODO
-
+```java
+// TODO: develop the database
+// TODO: extend the database classes to all models
+// TODO: implement file saving and loading
+```
 ## General
 - [x] design better hierarchy for all programs
 
@@ -40,21 +44,24 @@
 - database tables for all programs
   - [ ] people
   - [ ] bank
+  - [ ] library
+  - [ ] course enrollments
+  - [ ] vehicles
 - [ ] database table relations
 - [ ] connect all person-related classes
+
+## Files
 - implement file saving and loading
   - [ ] notes
   - [ ] shopping list
   - [ ] dictionary
-  - [ ] courses
-- [ ] integrate shapes with javafx
 
 ## Other programs
 - [ ] bank
 - calculator
   - [ ] basic
   - [ ] obsolete measures
-  - [ ] quadratic equation
+  - [x] quadratic equation
 - [ ] coffee
 - converter
   - [ ] temperature
@@ -73,3 +80,6 @@
   - [ ] subarrays
   - [ ] duplicates
 - [ ] tv
+
+
+- [ ] integrate shapes with javafx

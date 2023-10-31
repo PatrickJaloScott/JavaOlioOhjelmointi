@@ -7,7 +7,7 @@ public class Triangle extends Shape {
     private final double side_a, side_b, side_c;
     private double alpha, beta, gamma;
     public Triangle(String color, Vector2 a, Vector2 b, Vector2 c) {
-        super(color);
+        super("triangle", color);
         p_A = a; p_B = b; p_C = c;
 
         side_a = p_B.distanceTo(p_C);

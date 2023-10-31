@@ -3,6 +3,9 @@ package application.view;
 import application.controller.CurrencyController;
 import application.controller.DictionaryController;
 import application.controller.NoteController;
+import javafx.scene.canvas.Canvas;
+import programs.calculators.QuadraticSolver;
+import programs.calculators.ThreeNumbersCalculator;
 import programs.demo.Pyramid;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,6 +18,29 @@ public class FXMLController {
     // Main GUI
     @FXML
     private TextArea mainTextArea;
+
+    // Calculator GUI
+    ThreeNumbersCalculator threeNumbersCalculator;
+    @FXML
+    private TextField basicCalcNum1;
+    @FXML
+    private TextField basicCalcNum2;
+    @FXML
+    private TextField basicCalcNum3;
+    @FXML
+    private TextField basicCalcSum;
+    @FXML
+    private TextField basicCalcProduct;
+    @FXML
+    private TextField basicCalcAvg;
+    @FXML
+    private TextField quadraticAField;
+    @FXML
+    private TextField quadraticBField;
+    @FXML
+    private TextField quadraticCField;
+    @FXML
+    private Label quadraticFormulaLabel;
 
     // Currency Converter GUI
     private final CurrencyController currencyController;
@@ -54,7 +80,13 @@ public class FXMLController {
     @FXML
     private Label dictionaryDefinitionLabel;
 
+    // Lounge GUI
+    @FXML
+    private Canvas shapeCanvas;
+
     public FXMLController() {
+        threeNumbersCalculator = new ThreeNumbersCalculator(0, 0, 0);
+
         currencyController = new CurrencyController();
         noteController = new NoteController();
         dictionaryController = new DictionaryController();
@@ -78,6 +110,26 @@ public class FXMLController {
         noteTitles = FXCollections.observableArrayList(noteController.getNoteTitles());
         noteListContent = FXCollections.observableArrayList();
         noteListView.setItems(noteTitles);
+    }
+
+    // Calculator methods
+    @FXML
+    private void basicCalcSolve() {
+        int num1 = Integer.parseInt(basicCalcNum1.getText());
+        int num2 = Integer.parseInt(basicCalcNum2.getText());
+        int num3 = Integer.parseInt(basicCalcNum3.getText());
+        threeNumbersCalculator.setValues(num1, num2, num3);
+        basicCalcSum.setText("Sum = " + threeNumbersCalculator.sum());
+        basicCalcProduct.setText("Product = " + threeNumbersCalculator.product());
+        basicCalcAvg.setText("Average = " + threeNumbersCalculator.average());
+    }
+
+    @FXML
+    private void solveQuadraticFormula() {
+        int a = Integer.parseInt(quadraticAField.getText());
+        int b = Integer.parseInt(quadraticBField.getText());
+        int c = Integer.parseInt(quadraticCField.getText());
+        quadraticFormulaLabel.setText(QuadraticSolver.formula() + "\n" + QuadraticSolver.result(a, b, c));
     }
 
     private double getInputCurrencyRate() {
